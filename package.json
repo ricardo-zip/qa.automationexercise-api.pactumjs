@@ -1,0 +1,17 @@
+{
+  "name": "qa.automationexercise-api.pactumjs",
+  "version": "1.0.0",
+  "description": "Implementação de testes automatizados de API utilizando o framework PactumJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.test.js"
+  },
+  "author": "Ricardo Dias",
+  "license": "ISC",
+  "devDependencies": {
+    "joi": "^17.11.0",
+    "mocha": "^11.6.0",
+    "pactum": "^3.7.6",
+    "@faker-js/faker": "^9.8.0"
+  }
+}
