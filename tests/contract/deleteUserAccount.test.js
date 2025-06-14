@@ -1,32 +1,27 @@
-const pactum = require("pactum");
+const { spec } = require("pactum");
 const { DeleteUserSchema } = require("../../schemas/deleteUserSchema");
 const { setup } = require("../../config/pactum.config");
 const { createValidUser } = require("../../utils/create.user.helpers");
 
 describe("API 12: Remover usuários", () => {
-  let testUser;
+  let newUser;
 
   before(() => {
     setup();
   });
 
   beforeEach(async () => {
-    testUser = createValidUser();
+    newUser = createValidUser();
 
-    await pactum
-      .spec()
-      .post("/createAccount")
-      .withForm(testUser)
-      .expectStatus(200);
+    await spec().post("/createAccount").withForm(newUser).expectStatus(200);
   });
 
   it("deve validar a estrutura e os tipos dos campos da resposta de deleção", async () => {
-    const response = await pactum
-      .spec()
+    const response = await spec()
       .delete("/deleteAccount")
       .withForm({
-        email: testUser.email,
-        password: testUser.password,
+        email: newUser.email,
+        password: newUser.password,
       })
       .expectStatus(200)
       .returns("res.body");

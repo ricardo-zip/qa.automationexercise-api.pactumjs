@@ -1,4 +1,4 @@
-const pactum = require("pactum");
+const { spec } = require("pactum");
 const { ProductsListSchema } = require("../../schemas/productsListSchema");
 const { setup } = require("../../config/pactum.config");
 
@@ -8,8 +8,7 @@ describe("API 1: Listar todos Produtos", () => {
   });
 
   it("deve validar a estrutura e os tipos dos campos da resposta", async () => {
-    const response = await pactum
-      .spec()
+    const response = await spec()
       .get("/productsList")
       .expectStatus(200)
       .returns("res.body");
