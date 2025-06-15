@@ -1,77 +1,65 @@
-# qa.automationexercise-api.pactumjs
-Implementação de testes automatizados de API utilizando o framework PactumJS.
+# 📌 Projeto: qa.automationexercise-api.pactumjs
 
-## Desafio
+Automação de testes de API utilizando o framework **PactumJS**.
 
-O objetivo deste projeto é demonstrar a criação de testes de API robustos, cobrindo:
+[![Node.js CI](https://github.com/ricardo-zip/qa.automationexercise-api.pactumjs/actions/workflows/ci.yml/badge.svg)](https://github.com/ricardo-zip/qa.automationexercise-api.pactumjs/actions)
 
-*   **Testes Funcionais
-*   **Testes de Contrato
+---
 
-Critérios:
+## 🎯 Objetivo do Projeto
 
-- [x] O código deve ser de fácil entendimento.
-- [x] O código deve seguir um padrão.
-- [x] Testes organizados em suítes.
-- [x] Performance de execução dos testes.
-- [x] Organização do código, testes, pastas e demais arquivos.
-- [x] Integração com algum relatório.
-- [x] Pipeline configurada no GitHub Action
-- [x] O arquivo readme.md do projeto deve explicar quais configurações são necessárias, além de como instalar e executar o projeto.
-- [x] Para os testes funcionais de API, será avaliado o uso do seu conhecimento teórico para desenvolver os testes.
+Demonstrar a criação de **testes de API automatizados**, focando em:
 
+✅ Testes Funcionais  
+✅ Testes de Contrato  
+✅ Boas práticas de código e estrutura de projeto  
+✅ Integração com Pipeline CI/CD (GitHub Actions)  
+✅ Relatórios de execução  
 
+---
 
+## 📚 Tecnologias Utilizadas
 
-### Tecnologias Utilizadas
+- **Node.js**
+- **npm**
+- **PactumJS** – Framework de testes de API
+- **Mocha** – Executor de testes
+- **Joi** – Validação de contratos (Schemas)
+- **Mochawesome** – Geração de relatórios HTML
 
-*   **Node.js:**
-*   **npm:**
-*   **PactumJS:**
-*   **Mocha:**
-*   **Joi:**
-*   **Mochawesome:**
+---
 
-### Pré-requisitos
+## ✅ Pré-requisitos
 
-*   [Node.js](https://nodejs.org/)
+- Node.js instalado 👉 [Download Node.js](https://nodejs.org/)
 
-### Instalação e Configuração
+---
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/ricardo-zip/qa.automationexercise-api.pactumjs
-    cd qa.automationexercise-api.pactumjs
-    ```
+## 🛠️ Instalação e Configuração
 
-2.  **Instale as dependências:**
-    Execute este comando na raiz do projeto para instalar as dependencias `package.json`:
-    ```bash
-    npm install
-    ```
+1. **Clone o repositório:**
 
-### Estrutura do Projeto
+```bash
+git clone https://github.com/ricardo-zip/qa.automationexercise-api.pactumjs
+cd qa.automationexercise-api.pactumjs
+```
 
+2. **Instale as dependências:**
 
-### Executando os Testes
+```
+npm install
+```
 
-*   **Executar todos os testes funcionais e de contrato:**
-    ```bash
-    npm test
-    ```
+```bash
+✅ Executar todos os testes Funcionais + Contrato:
+npm test
+```
 
-*   **Executar os testes funcionais:**
-    ```bash
-    npm run test:fun
-    ```
+```bash
+✅ Executar e gerar relatório Mochawesome:
+npm run test:report
+```
 
-*   **Executar apenas os testes de contrato:**
-    ```bash
-    npm run test:contract
-    ```
-
-*   **Executar todos os testes e gerar o relatório:**
-    ```bash
-    npm run test:report
-    ```
-   Disponível na pasta `mochawesome-report/`. Abra o arquivo `mochawesome.html`.
+```bash
+👉 O relatório será salvo em:
+mochawesome-report/mochawesome.html
