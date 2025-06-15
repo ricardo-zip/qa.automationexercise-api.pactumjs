@@ -35,6 +35,23 @@ describe("API 11: Criação de usuários", () => {
       });
   });
 
+  it("validar existência de usuário após o cadastro da conta", async () => {
+    const emailToTest = newUser.email;
+
+    await spec().post("/createAccount").withForm(newUser).expectStatus(200);
+
+    await spec()
+      .get("/getUserDetailByEmail")
+      .withQueryParams("email", emailToTest)
+      .expectStatus(200)
+      .expectJsonLike({
+        responseCode: 200,
+        user: {
+          email: emailToTest,
+        },
+      });
+  });
+
   it("não deve realizar cadastro com um e-mail já cadastrado", async () => {
     let newUserDuplicate = createValidUser();
     await spec()
@@ -52,7 +69,7 @@ describe("API 11: Criação de usuários", () => {
       });
   });
 
-  it("não deve criar usuário quando faltar campo obrigatório (ex: email)", async function () {
+  it("não deve criar usuário quando faltar campo obrigatório", async function () {
     const userWithoutEmail = createValidUser();
     delete userWithoutEmail.email;
 
