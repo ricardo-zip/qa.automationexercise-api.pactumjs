@@ -16,7 +16,7 @@ describe("API 12: Remover usuários", () => {
     await spec().post("/createAccount").withForm(newUser).expectStatus(200);
   });
 
-  it("deve validar a estrutura e os tipos dos campos da resposta de deleção", async () => {
+  it("deve validar a estrutura e os tipos dos campos da resposta de exclusão", async () => {
     const response = await spec()
       .delete("/deleteAccount")
       .withForm({

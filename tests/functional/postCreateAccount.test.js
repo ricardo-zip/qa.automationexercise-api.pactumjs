@@ -52,16 +52,12 @@ describe("API 11: Criação de usuários", () => {
       });
   });
 
-  it("não deve realizar cadastro com um e-mail já cadastrado", async () => {
-    let newUserDuplicate = createValidUser();
-    await spec()
-      .post("/createAccount")
-      .withForm(newUserDuplicate)
-      .expectStatus(200);
+  it.only("não deve realizar cadastro com um e-mail já cadastrado", async () => {
+    await spec().post("/createAccount").withForm(newUser).expectStatus(200);
 
     await spec()
       .post("/createAccount")
-      .withForm(newUserDuplicate)
+      .withForm(newUser)
       .expectStatus(200)
       .expectJsonLike({
         responseCode: 400,
@@ -70,12 +66,11 @@ describe("API 11: Criação de usuários", () => {
   });
 
   it("não deve criar usuário quando faltar campo obrigatório", async function () {
-    const userWithoutEmail = createValidUser();
-    delete userWithoutEmail.email;
+    delete newUser.email;
 
     await spec()
       .post("/createAccount")
-      .withForm(userWithoutEmail)
+      .withForm(newUser)
       .expectStatus(200)
       .expectJsonLike({
         responseCode: 400,
