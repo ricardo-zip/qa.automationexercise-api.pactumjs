@@ -52,7 +52,7 @@ describe("API 11: Criação de usuários", () => {
       });
   });
 
-  it.only("não deve realizar cadastro com um e-mail já cadastrado", async () => {
+  it("não deve realizar cadastro com um e-mail já cadastrado", async () => {
     await spec().post("/createAccount").withForm(newUser).expectStatus(200);
 
     await spec()
