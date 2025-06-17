@@ -2,7 +2,7 @@ const { spec } = require("pactum");
 const { ProductsListSchema } = require("../../schemas/productsListSchema");
 const { setup } = require("../../config/pactum.config");
 
-describe("API 1: Listar todos Produtos", () => {
+describe("[CONTRATO] API 1: Listar todos Produtos", () => {
   before(() => {
     setup();
   });

@@ -2,7 +2,7 @@ const { spec } = require("pactum");
 const { setup } = require("../../config/pactum.config");
 const { createValidUser } = require("../../utils/create.user.helpers");
 
-describe("API 12: Exclusão de usuários", () => {
+describe("[FUNCIONAIS] API 12: Exclusão de usuários", () => {
   before(() => {
     setup();
   });

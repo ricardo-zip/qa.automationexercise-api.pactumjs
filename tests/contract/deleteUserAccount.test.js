@@ -3,7 +3,7 @@ const { DeleteUserSchema } = require("../../schemas/deleteUserSchema");
 const { setup } = require("../../config/pactum.config");
 const { createValidUser } = require("../../utils/create.user.helpers");
 
-describe("API 12: Remover usuários", () => {
+describe("[CONTRATO] API 12: Remover usuários", () => {
   let newUser;
 
   before(() => {
