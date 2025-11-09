@@ -10,6 +10,7 @@ describe("[CONTRATO] API 12: Remover usuários", () => {
     setup();
   });
 
+  
   beforeEach(async () => {
     newUser = createValidUser();
 
